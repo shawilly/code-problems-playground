@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",   // Set your target ECMAScript version
+    "module": "CommonJS", // Set your module system (CommonJS is common for Node.js)
+    "strict": true,       // Enable strict type checking
+    "esModuleInterop": true, // Allow default imports from modules using commonjs
+    "skipLibCheck": true,  // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
+    "isolatedModules": true, // Ensure that each file is treated as a separate module
+    "noEmit": true, // Do not emit JavaScript output files
+    "resolveJsonModule": true // Allow importing JSON files
+  }
+}
