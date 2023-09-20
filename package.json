@@ -4,7 +4,8 @@
   "description": "A simple yet versatile Node.js application designed to streamline the process of writing, testing, and documenting code problems",
   "main": "index.ts",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "cross-env TS_NODE_TRANSPILE_ONLY=true ts-node problems/start.ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/shawilly/code-problems-playground#readme",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },

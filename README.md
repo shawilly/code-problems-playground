@@ -22,7 +22,7 @@ This repository houses a simple yet versatile Node.js application designed to st
 
 ## Overview
 
-Welcome to the CodeProblems Playground! This Node.js and TypeScript application simplifies the process of creating, testing, and documenting coding problems. Whether you're an educator, a coding enthusiast, or a software developer, this tool is designed to streamline your coding challenge workflow.
+Welcome to the CodeProblems Playground! This Node.js and TypeScript application simplifies the process of creating, testing, and documenting coding problems. Whether you're an educator, a coding enthusiast, or a software developer, this tool is designed to streamline your coding challenge workflow. It can provide fast testing, and it's free!
 
 ### Key Features
 
@@ -85,11 +85,17 @@ Certainly! Here's a simplified breakdown:
 
 Each folder in problems will have a namesake ts file that should be used to run the code. They will pull from 
 
-Test code solutions against problem statements with the following command:
+Test code solutions against problem statements one of the following commands:
 
   ```bash
   npm test my_problem.ts
   ```
+  _...to run from index.js_
+
+  ```bash
+  npm start my_problem.ts
+  ```
+  _...to run from start.ts_
 
 Replace `my_problem.ts` with the filename of the problem you want to test.
 

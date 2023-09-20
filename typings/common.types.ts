@@ -1,5 +1,5 @@
 export interface IData {
-  inputs: any[][];
+  inputs: any[];
   outputs: any[];
 }
 

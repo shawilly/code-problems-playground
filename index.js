@@ -26,7 +26,6 @@ function main() {
                 return filePath;
             }
         }
-
         return null;
     }
 
