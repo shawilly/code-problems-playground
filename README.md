@@ -68,29 +68,30 @@ Before you begin, ensure you have met the following requirements:
 
 To create a new coding problem, follow these steps:
 
-1. Navigate to the `problems` directory.
+Certainly! Here's a simplified breakdown:
 
-2. Create a new TypeScript file for your problem, e.g., `my_problem.ts`.
-
-3. Write the problem statement, input constraints, and expected output in the TypeScript file.
+  1. Find the 'problems' folder.
+  2. Inside 'problems', create or locate a folder for your specific problem.
+   - This folder should contain:
+     - A file named after your problem to run your solution.
+     - Files to store input data.
+     - A README explaining the problem.
+     - A 'solutions' folder for reference.
+  3. Develop and test your solution using the provided instructions.
+  4. If you're happy with your solution, move it into the 'solutions' folder with a clear name.
+  5. In your TypeScript file for the problem, include the problem statement and import any existing input examples. You can also add more inputs and their expected outputs as needed.
 
 ### Testing Solutions
+
+Each folder in problems will have a namesake ts file that should be used to run the code. They will pull from 
+
 Test code solutions against problem statements with the following command:
 
   ```bash
-  npm run test file='my_problem.ts'
+  npm test my_problem.ts
   ```
 
 Replace `my_problem.ts` with the filename of the problem you want to test.
-
-### Generating Documentation
-Generate documentation for your coding challenges using:
-
-  ```bash
-  npm run generate-docs
-  ```
-
-Documentation will be generated in the docs directory.
 
 #### Contributing
 We welcome contributions! Feel free to improve existing problems, create new ones, or enhance the application's functionality. Please follow our Contribution Guidelines for details on how to contribute.
