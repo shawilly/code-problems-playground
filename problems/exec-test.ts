@@ -15,10 +15,6 @@ function testTitle(title: string, passed: boolean) {
   );
 }
 
-function logSection(title: string) {
-  console.log(chalk.bold(`${title}`));
-}
-
 function resultSection(title: string, result: any) {
   console.log(chalk.bold(`${title}:`), `${JSON.stringify(result)}\n`);
 }
@@ -53,13 +49,6 @@ export function execTest(problem: IProblem): IResult {
     };
   });
 
-  const passed = results.every((result) => result.passed);
-  logSeparator("Overall Result");
-  const statusMessage = passed
-    ? chalk.green("✅ Your solution has passed!")
-    : chalk.red("❌ Your solution has failed!");
-  console.log(chalk.bold(`${statusMessage}\n`));
-
   console.log(chalk.bold(`\nResults:\n`));
   results.forEach(({ test, input, result, output, passed }) => {
     testTitle(`Test ${test}`, passed);
@@ -70,5 +59,16 @@ export function execTest(problem: IProblem): IResult {
       `Passed: ${passed ? chalk.bold.green("Yes") : chalk.bold.red("No")}\n`
     );
   });
+  logSeparator("Overall Result");
+
+  console.log(
+    chalk.bold(
+      `${
+        results.every((result) => result.passed)
+          ? chalk.green("✅ Your solution has passed!")
+          : chalk.red("❌ Your solution has failed!")
+      }\n`
+    )
+  );
   process.exit();
 }

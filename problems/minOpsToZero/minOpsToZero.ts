@@ -12,16 +12,23 @@ function minOperations(input: { nums: number[]; x: number }): number {
   const { nums, x: targetValue } = input;
   const totalSum = nums.reduce((a, b) => a + b, 0) - targetValue;
   const n = nums.length;
+
+  // Add minimum operations as 1 << 30 so that it is greater than any possible answer
   let minimumOperations = 1 << 30;
 
-  // If totalSum is negative, there is no solution
-  for (let left = 0, right = 0, cSum = 0; left < n; ++left) {
-    cSum += nums[left];
-    while (right <= left && cSum > totalSum) {
-      cSum -= nums[right++];
+  // Loop through the array and find the shortest subarray with sum = totalSum
+  for (let lIndex = 0, rIndex = 0, cSum = 0; lIndex < n; ++lIndex) {
+    // Add the current element to the sum
+    cSum += nums[lIndex];
+    // If the sum is greater than totalSum, remove elements from the left
+    while (rIndex <= lIndex && cSum > totalSum) {
+      cSum -= nums[rIndex++];
     }
     if (cSum == totalSum) {
-      minimumOperations = Math.min(minimumOperations, n - (left - right + 1));
+      minimumOperations = Math.min(
+        minimumOperations,
+        n - (lIndex - rIndex + 1)
+      );
     }
   }
 
